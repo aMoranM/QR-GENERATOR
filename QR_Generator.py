@@ -52,11 +52,11 @@ def generar_qr_con_logo(
 
 if __name__ == "__main__":
     # Bucle para generar códigos QR de acuerdo a un patrón
-    for i in range(21, 40):
+    for i in range(151, 300):
         for position in ["BOTTOM", "TOP"]:
             titulo = f"CRAH-{i}-{position}"
             generar_qr_con_logo(
                 texto_qr=f"https://qr.umascustom.com/{titulo}",
                 logo_path=None,
-                nombre_archivo_salida=f"imagenes/qr_{titulo}.png"
+                nombre_archivo_salida=f"imagenes\qr_{titulo}.jpg"
             )
