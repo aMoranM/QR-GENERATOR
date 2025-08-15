@@ -6,7 +6,7 @@ def crear_carpetas_y_archivos(base_path):
     os.makedirs(base_path, exist_ok=True)
     
     # Recorrer el rango y los distintos valores de "posicion"
-    for i in range(40, 151):
+    for i in range(263, 300):
         for posicion in ["BOTTOM", "TOP"]:
             # Armar el nombre y ruta de la carpeta
             nombre_carpeta = f"CRAH-{i}-{posicion}"
