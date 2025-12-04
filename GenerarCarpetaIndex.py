@@ -8,7 +8,7 @@ def crear_carpetas_y_archivos(base_path):
     # Recorrer el rango y los distintos valores de "posicion"
     # for i in range(1, 25):
     # Armar el nombre y ruta de la carpeta
-    nombre_carpeta = f"WIRING DIAGRAM"
+    nombre_carpeta = f"IOM_FCW"
     ruta_carpeta = os.path.join(base_path, nombre_carpeta)
     
     # Si la carpeta ya existe, se detiene el proceso
