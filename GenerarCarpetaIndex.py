@@ -8,7 +8,7 @@ def crear_carpetas_y_archivos(base_path):
     # Recorrer el rango y los distintos valores de "posicion"
     # for i in range(1, 25):
     # Armar el nombre y ruta de la carpeta
-    nombre_carpeta = f"IOM_FCW"
+    nombre_carpeta = f"ASSEMBLY_HANDLING_AND_POSITIONING_OF_THE_UNIT"
     ruta_carpeta = os.path.join(base_path, nombre_carpeta)
     
     # Si la carpeta ya existe, se detiene el proceso
