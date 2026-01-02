@@ -44,7 +44,7 @@ def qr_to_r12_dxf(data: str, out_dxf: str, module_size: float = 1.0, border: int
 
 if __name__ == "__main__":
     # Example: generate “qr_CRAH-151-BOTTOM.dxf” at 2 units/module + 4-module border
-    for i in range(261, 300):
+    for i in range(700, 900):
         for position in ["BOTTOM", "TOP"]:
             titulo = f"CRAH-{i}-{position}"
             qr_to_r12_dxf(

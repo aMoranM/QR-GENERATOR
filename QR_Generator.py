@@ -54,9 +54,9 @@ if __name__ == "__main__":
     # Bucle para generar códigos QR de acuerdo a un patrón
     # for i in range(151, 300):
         # for position in ["BOTTOM", "TOP"]:
-            titulo = f"ASSEMBLY_HANDLING_AND_POSITIONING_OF_THE_UNIT"
+            titulo = f"WIRING_DIAGRAM"
             generar_qr_con_logo(
-                texto_qr=f"https://qr.umascustom.com/VANTAGE/{titulo}",
+                texto_qr=f"https://qr.umascustom.com/VANTAGE_2/{titulo}",
                 logo_path=None,
-                nombre_archivo_salida=f"imagenes\VANTAGE\qr_{titulo}.PNG"
+                nombre_archivo_salida=f"imagenes\VANTAGE_2\qr_{titulo}.PNG"
             )
