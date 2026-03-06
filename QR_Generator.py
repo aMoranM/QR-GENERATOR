@@ -1,3 +1,4 @@
+import os
 import qrcode
 from PIL import Image
 
@@ -51,12 +52,13 @@ def generar_qr_con_logo(
     print(f"Imagen guardada: {nombre_archivo_salida}")
 
 if __name__ == "__main__":
+    os.makedirs("imagenes", exist_ok=True)
     # Bucle para generar códigos QR de acuerdo a un patrón
-    # for i in range(151, 300):
-        # for position in ["BOTTOM", "TOP"]:
-            titulo = f"REGLAMENTO_INTERIOR_DE_TRABAJO_UMAS_PDF"
+    for i in range(899, 1051):
+        for position in ["BOTTOM", "TOP"]:
+            titulo = f"CRAH-{i}-{position}"
             generar_qr_con_logo(
                 texto_qr=f"https://qr.umascustom.com/{titulo}",
                 logo_path=None,
-                nombre_archivo_salida=f"imagenes\qr_{titulo}.jpg"
+                nombre_archivo_salida=f"imagenes/qr_{titulo}.png"
             )

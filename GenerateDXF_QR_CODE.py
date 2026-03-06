@@ -1,3 +1,4 @@
+import os
 import segno
 import ezdxf
 
@@ -5,8 +6,8 @@ def qr_to_r12_dxf(data: str, out_dxf: str, module_size: float = 1.0, border: int
     """
     Create a true R12 (AC1009) DXF containing a QR code for `data`.
 
-    - module_size: the side length (in drawing units) of each QR “pixel”.
-    - border: number of “quiet‐zone” modules around the code (ISO minimum = 4).
+    - module_size: the side length (in drawing units) of each QR "pixel".
+    - border: number of "quiet-zone" modules around the code (ISO minimum = 4).
     """
     # 1) Generate the Segno QR object (error level H for max redundancy)
     qr = segno.make(data, error="H")
@@ -19,11 +20,11 @@ def qr_to_r12_dxf(data: str, out_dxf: str, module_size: float = 1.0, border: int
     doc = ezdxf.new(dxfversion="AC1009")
     msp = doc.modelspace()
 
-    # 4) For each “dark” module, draw a filled SOLID (4-vertex quad)
+    # 4) For each "dark" module, draw a filled SOLID (4-vertex quad)
     for row_idx, row in enumerate(matrix):
         for col_idx, bit in enumerate(row):
             if not bit:
-                continue  # skip “light” modules
+                continue  # skip "light" modules
 
             # Compute lower-left corner for this module in DXF units:
             x0 = (col_idx + border) * module_size
@@ -43,13 +44,13 @@ def qr_to_r12_dxf(data: str, out_dxf: str, module_size: float = 1.0, border: int
     print(f"R12 DXF saved as: {out_dxf}")
 
 if __name__ == "__main__":
-    # Example: generate “qr_CRAH-151-BOTTOM.dxf” at 2 units/module + 4-module border
-    for i in range(261, 300):
+    os.makedirs("imagenes/DXF", exist_ok=True)
+    for i in range(899, 1051):
         for position in ["BOTTOM", "TOP"]:
             titulo = f"CRAH-{i}-{position}"
             qr_to_r12_dxf(
                 data=f"https://qr.umascustom.com/{titulo}",
-                out_dxf=f"imagenes\DXF\qr_{titulo}.dxf",
+                out_dxf=f"imagenes/DXF/qr_{titulo}.dxf",
                 module_size=1.0,
                 border=4
             )
